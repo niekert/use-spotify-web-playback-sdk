@@ -10,6 +10,7 @@ interface HookReturnValue {
   isReady:boolean,
   deviceId: string| null,
   connect: () =>  Promise<Boolean>,
+  player: Spotify.SpotifyPlayer | null,
   Script: React.FunctionComponent<{ children: React.ReactNode}>
 }
 

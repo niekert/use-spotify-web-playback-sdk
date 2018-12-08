@@ -85,6 +85,7 @@ export function useSpotifyWebSdk({
     isReady,
     deviceId,
     connect,
+    player: playerRef.current,
     Script: props => (
       <Script src="https://sdk.scdn.co/spotify-player.js" {...props} />
     ),
