@@ -16,7 +16,7 @@ export function useSpotifyWebSdk({
   const [isReady, setIsReady] = React.useState(false);
   const [deviceId, setDeviceId] = React.useState(null);
   const playerRef = React.useRef(null);
-
+  
   React.useEffect(() => {
     window.onSpotifyWebPlaybackSDKReady = () => {
       playerRef.current = new Spotify.Player({
