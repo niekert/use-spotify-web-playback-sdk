@@ -9,14 +9,13 @@ export function useSpotifyWebSdk({
   onAccountError = noop,
   onNotReady = noop,
   onAuthError = noop,
-  onAuthError = noop,
   onReady = noop,
   onPlayerStateChanged = noop,
 }) {
   const [isReady, setIsReady] = React.useState(false);
   const [deviceId, setDeviceId] = React.useState(null);
   const playerRef = React.useRef(null);
-  
+
   React.useEffect(() => {
     window.onSpotifyWebPlaybackSDKReady = () => {
       playerRef.current = new Spotify.Player({
@@ -39,7 +38,7 @@ export function useSpotifyWebSdk({
     }
   }, []);
 
-  const handleAccountError = React.useCallback(accountError, []);
+  const handleAccountError = React.useCallback(onAccountError, []);
   const handleInitializationError = React.useCallback(initializationError, []);
   const handleAuthError = React.useCallback(onAuthError, []);
   const handleNotReady = React.useCallback(onNotReady, []);

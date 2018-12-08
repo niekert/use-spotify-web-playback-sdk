@@ -10,7 +10,7 @@ interface HookReturnValue {
   isReady:boolean,
   deviceId: string| null,
   connect: () =>  Promise<Boolean>,
-  Script: React.Component
+  Script: React.FunctionComponent<{ children: React.ReactNode}>
 }
 
 export default function useSpotifyWebSdk(options:Options): HookReturnValue;
