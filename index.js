@@ -8,6 +8,7 @@ export function useSpotifyWebSdk({
   getOAuthToken,
   onAccountError = noop,
   onNotReady = noop,
+  onInitializeError = noop,
   onAuthError = noop,
   onReady = noop,
   onPlayerStateChanged = noop,
@@ -39,7 +40,7 @@ export function useSpotifyWebSdk({
   }, []);
 
   const handleAccountError = React.useCallback(onAccountError, []);
-  const handleInitializationError = React.useCallback(initializationError, []);
+  const handleInitializationError = React.useCallback(onInitializeError, []);
   const handleAuthError = React.useCallback(onAuthError, []);
   const handleNotReady = React.useCallback(onNotReady, []);
   const handlePlayerStateChange = React.useCallback(onPlayerStateChanged, []);

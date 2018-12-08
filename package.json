@@ -1,6 +1,6 @@
 {
   "name": "use-spotify-web-playback-sdk",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "React hook for the Spotify Web SDK",
   "main": "dist/foo.js",
   "umd:main": "dist/foo.umd.js",
@@ -26,7 +26,7 @@
     "build": "microbundle"
   },
   "peerDependencies": {
-    "react": "^16.7.0-alpha.0"
+    "react": "^16.7.x"
   },
   "devDependencies": {
     "@types/spotify-web-playback-sdk": "^0.1.3",
