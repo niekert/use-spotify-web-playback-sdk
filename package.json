@@ -1,6 +1,6 @@
 {
   "name": "use-spotify-web-playback-sdk",
-  "version": "0.0.10-0",
+  "version": "0.1.0",
   "description": "React hook for the Spotify Web SDK",
   "source": "src/index.js",
   "repository": "https://github.com/niekert/use-spotify-web-playback-sdk",
