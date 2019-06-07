@@ -1,5 +1,5 @@
-import React from "react";
-import { Script } from "the-platform";
+import React from 'react';
+import { Script } from 'the-platform';
 
 const noop = () => {};
 
@@ -46,40 +46,42 @@ export function useSpotifyWebSdk({
   const handlePlayerStateChange = React.useCallback(onPlayerStateChanged, []);
 
   const connect = React.useCallback(() => {
-    player.connect();
+    if (playerRef.current) {
+      playerRef.current.connect();
+      return;
+    }
+
+    throw new Error('Player is not initialized');
   }, []);
 
-  React.useEffect(
-    () => {
-      const player = playerRef.current;
+  React.useEffect(() => {
+    const player = playerRef.current;
 
-      if (isReady) {
-        player.addListener("account_error", handleAccountError);
-        player.addListener("ready", handleReady);
-        player.addListener("initialization_error", handleInitializationError);
-        player.addListener("authentication_error", handleAuthError);
-        player.addListener("not_ready", handleNotReady);
-        player.addListener("player_state_changed", handlePlayerStateChange);
+    if (isReady) {
+      player.addListener('account_error', handleAccountError);
+      player.addListener('ready', handleReady);
+      player.addListener('initialization_error', handleInitializationError);
+      player.addListener('authentication_error', handleAuthError);
+      player.addListener('not_ready', handleNotReady);
+      player.addListener('player_state_changed', handlePlayerStateChange);
 
-        return () => {
-          player.removeEventListener("ready", handleReady);
-          player.removeEventListener(
-            "initialization_error",
-            handleInitializationError,
-          );
-          player.removeEventListener("authentication_error", handleAuthError);
-          player.removeEventListener("not_ready", handleNotReady);
-          player.removeEventListener(
-            "player_state_changed",
-            handlePlayerStateChange,
-          );
-        };
-      }
+      return () => {
+        player.removeEventListener('ready', handleReady);
+        player.removeEventListener(
+          'initialization_error',
+          handleInitializationError,
+        );
+        player.removeEventListener('authentication_error', handleAuthError);
+        player.removeEventListener('not_ready', handleNotReady);
+        player.removeEventListener(
+          'player_state_changed',
+          handlePlayerStateChange,
+        );
+      };
+    }
 
-      return;
-    },
-    [isReady],
-  );
+    return;
+  }, [isReady]);
 
   return {
     isReady,
