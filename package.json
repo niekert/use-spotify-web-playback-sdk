@@ -2,7 +2,7 @@
   "name": "use-spotify-web-playback-sdk",
   "version": "0.1.0",
   "description": "React hook for the Spotify Web SDK",
-  "source": "src/index.js",
+  "source": "src/index.ts",
   "repository": "https://github.com/niekert/use-spotify-web-playback-sdk",
   "author": "Niek Kruse",
   "license": "MIT",
@@ -27,17 +27,21 @@
     "react-dom": "^16.8.6"
   },
   "devDependencies": {
-    "@pika/pack": "^0.3.7",
     "@babel/core": "^7.4.5",
     "@babel/preset-env": "^7.4.5",
     "@babel/preset-react": "^7.0.0",
+    "@babel/preset-typescript": "^7.3.3",
+    "@pika/pack": "^0.3.7",
     "@pika/plugin-build-types": "^0.4.0",
     "@pika/plugin-build-web": "^0.4.0",
     "@pika/plugin-standard-pkg": "^0.4.0",
+    "@types/react": "^16.8.20",
+    "@types/react-dom": "^16.8.4",
     "@types/spotify-web-playback-sdk": "^0.1.6",
     "browser-env": "^3.2.5",
     "react": "^16.8.6",
-    "react-dom": "^16.8.6"
+    "react-dom": "^16.8.6",
+    "typescript": "^3.5.2"
   },
   "@pika/pack": {
     "pipeline": [
