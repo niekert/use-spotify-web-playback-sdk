@@ -66,8 +66,5 @@
       "./test-setup.js"
     ]
   },
-  "dependencies": {
-    "react-cache": "^2.0.0-alpha.1",
-    "the-platform": "^0.10.1"
-  }
+  "dependencies": {}
 }
